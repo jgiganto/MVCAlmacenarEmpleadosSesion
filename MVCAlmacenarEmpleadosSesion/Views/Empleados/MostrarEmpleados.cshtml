@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "MostrarEmpleados";
+}
+@model IQueryable<MVCAlmacenarEmpleadosSesion.Models.EMP>
+
+<h2>MostrarEmpleados</h2>
+
+@if (Model == null)
+{
+    <h2>No hay empleados</h2>
+}
+else
+{
+    <ul>
+        @foreach(var emp in Model)
+        {
+            <li>@emp.APELLIDO</li>
+        }
+    </ul>
+}
+@Html.ActionLink("Volver","AlmacenarEmpleados","Empleados")

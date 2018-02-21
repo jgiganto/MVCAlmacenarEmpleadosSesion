@@ -1,0 +1,18 @@
+﻿@model IQueryable<MVCAlmacenarEmpleadosSesion.Models.EMP>
+@{
+    ViewBag.Title = "AlmacenarEmpleados";
+}
+
+<h2>AlmacenarEmpleados</h2>
+<h4>@ViewBag.Mensaje</h4>
+<ul>
+    @foreach(var emp in Model)
+    {
+        <li>
+            @emp.APELLIDO
+            @Html.ActionLink("Almacenar","AlmacenarEmpleados","Empleados",
+           new { empno = emp.EMP_NO }, new { @htmlattr = "value" })
+        </li>
+    }
+</ul>
+@Html.ActionLink("Mostrar almacenados", "MostrarEmpleados", "Empleados")
